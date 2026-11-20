@@ -1,9 +1,4 @@
-/* =====================================================
-   style.css - Desain sederhana untuk Portal Berita
-   Letak file: public/css/style.css
-   ===================================================== */
-
-/* ---------- 1. Warna yang dipakai (ubah di sini saja) ---------- */
+/* ---------- 1. Warna yang dipakai ---------- */
 :root {
     --warna-utama: #2563eb;
     --warna-utama-gelap: #1d4ed8;
