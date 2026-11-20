@@ -1,0 +1,417 @@
+/* =====================================================
+   style.css - Desain sederhana untuk Portal Berita
+   Letak file: public/css/style.css
+   ===================================================== */
+
+/* ---------- 1. Warna yang dipakai (ubah di sini saja) ---------- */
+:root {
+    --warna-utama: #2563eb;
+    --warna-utama-gelap: #1d4ed8;
+    --teks: #1f2937;
+    --teks-redup: #6b7280;
+    --garis: #e5e7eb;
+    --latar: #f3f4f6;
+}
+
+/* ---------- 2. Pengaturan dasar ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--teks);
+    background: var(--latar);
+}
+
+a {
+    color: var(--warna-utama);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2,
+h3,
+h4 {
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
+}
+
+p {
+    margin: 0 0 0.75rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.muted {
+    color: var(--teks-redup);
+    font-size: 0.9rem;
+}
+
+/* ---------- 3. Wadah halaman ---------- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+.footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--garis);
+    text-align: center;
+    color: var(--teks-redup);
+    font-size: 0.85rem;
+}
+
+/* ---------- 4. Navigasi ---------- */
+.nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+    padding: 0.6rem 0.75rem;
+    background: #fff;
+    border: 1px solid var(--garis);
+    border-radius: 8px;
+}
+
+.nav a {
+    padding: 0.3rem 0.7rem;
+    color: var(--teks);
+    border-radius: 6px;
+}
+
+.nav a:hover {
+    background: var(--latar);
+    text-decoration: none;
+}
+
+.nav a.active {
+    color: var(--warna-utama);
+    background: #eff6ff;
+    font-weight: 600;
+}
+
+.nav .right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto;
+}
+
+/* ---------- 5. Kartu ---------- */
+.card {
+    margin-bottom: 1rem;
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid var(--garis);
+    border-radius: 8px;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.page-header h2 {
+    margin: 0;
+}
+
+/* ---------- 6. Tombol ---------- */
+button,
+.btn {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    font: inherit;
+    font-size: 0.9rem;
+    color: #fff;
+    background: var(--warna-utama);
+    border: 1px solid var(--warna-utama);
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:hover,
+.btn:hover {
+    background: var(--warna-utama-gelap);
+    text-decoration: none;
+}
+
+.btn-light {
+    color: var(--teks);
+    background: #fff;
+    border-color: #d1d5db;
+}
+
+.btn-light:hover {
+    background: var(--latar);
+}
+
+.btn-danger {
+    color: #b91c1c;
+    background: #fff;
+    border-color: #fca5a5;
+}
+
+.btn-danger:hover {
+    background: #fef2f2;
+}
+
+form.inline {
+    display: inline;
+    margin: 0;
+}
+
+/* ---------- 7. Pesan sukses dan error ---------- */
+.flash {
+    margin: 0 0 1rem;
+    padding: 0.6rem 0.9rem;
+    color: #065f46;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 6px;
+}
+
+.error {
+    margin: 0 0 1rem;
+    padding: 0.6rem 0.9rem;
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+}
+
+.error ul {
+    margin: 0.4rem 0 0;
+    padding-left: 1.2rem;
+}
+
+/* ---------- 8. Daftar artikel di Home dan Dashboard ---------- */
+.article-list {
+    margin-top: 0.75rem;
+}
+
+.article {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--garis);
+}
+
+.article:first-child {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.article img {
+    flex-shrink: 0;
+    width: 200px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.article.kecil img {
+    width: 120px;
+    height: 80px;
+}
+
+.article h4 {
+    margin: 0 0 0.25rem;
+    font-size: 1.05rem;
+}
+
+.article p {
+    margin-bottom: 0.4rem;
+}
+
+/* ---------- 9. Dashboard ---------- */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.stats .card {
+    margin-bottom: 0;
+}
+
+.angka {
+    margin: 0.25rem 0;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+ul.polos {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.polos li {
+    margin-bottom: 0.35rem;
+}
+
+/* ---------- 10. Halaman Daftar Artikel (index) ---------- */
+.daftar {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.daftar li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--garis);
+}
+
+.daftar .judul {
+    flex: 1;
+    min-width: 200px;
+}
+
+.daftar .judul small {
+    display: block;
+    color: var(--teks-redup);
+}
+
+.aksi {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--teks-redup);
+}
+
+.pagination a,
+.pagination .nonaktif {
+    padding: 0.3rem 0.75rem;
+    background: #fff;
+    border: 1px solid var(--garis);
+    border-radius: 6px;
+}
+
+.pagination .nonaktif {
+    color: #9ca3af;
+}
+
+/* ---------- 11. Halaman Detail Artikel (show) ---------- */
+.cover {
+    width: 100%;
+    max-height: 320px;
+    margin: 1rem 0;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.isi {
+    margin-top: 1rem;
+}
+
+.tautan {
+    margin: 1.5rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--garis);
+}
+
+/* ---------- 12. Form tambah dan edit ---------- */
+label {
+    display: block;
+    margin: 1rem 0 0.3rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    font: inherit;
+    color: inherit;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+    border-color: var(--warna-utama);
+    outline: 2px solid #bfdbfe;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-aksi {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.preview {
+    width: 100%;
+    max-width: 400px;
+    max-height: 220px;
+    margin-bottom: 0.5rem;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* ---------- 13. Tampilan HP (layar kecil) ---------- */
+@media (max-width: 600px) {
+    .article {
+        flex-direction: column;
+    }
+
+    .article img,
+    .article.kecil img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .nav .right {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}
